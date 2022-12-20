@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>flex</title>
+    <style>
+.item {
+  margin: 10px;
+  background: rgb(206, 150, 187);
+  color: rgb(48, 31, 157);
+  width: 200px;
+  height: 200px;
+  border:1px solid,black;
+  display:inline-grid;
+text-align-last: center;
+text-align: center;
+border-radius: 40px;
+}
+    </style>
+  </head>
+  <body>
+      <div id="demo"></div>
+      <script>
+            fetch("https://jsonplaceholder.typicode.com/users")
+            .then((response)=>response.json())
+            .then((data)=>{
+              console.log(data)
+      function table(){
+              let totaldata="";
+              for(i=0; i<data.length; i++){
+                totaldata+=
+       ` <div class="item">
+       <div><img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000" height="70px" width="70px"></div>
+      ${data[i].name}
+      ${data[i].email}
+      ${data[i].address.city}
+       </div>`
+      }
+        document.getElementById("demo").innerHTML=totaldata;
+            }
+              table();
+          })
+      </script>
+      </div>
+      </div>
+
+
+
+
+
+
+

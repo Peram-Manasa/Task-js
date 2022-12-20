@@ -1,0 +1,65 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const button = document.getElementById('waButton');
+let image = document.getElementById('image');
+let imageURL = image.src;
+
+// let sharehref = `whatsapp://send?text=${encodeURIComponent(imageSrc)}`;
+
+button.setAttribute('href', 'whatsapp://send?text='+encodeURIComponent(imageURL));
+
+//button.setAttribute('href', sharehref);
+//console.log(button);
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="get" accept charset="utf-8"> 
+
+<select id="car">
+
+<option> BMW </option>
+<option> Mercedes </option>
+<option> Audi </option>
+<option> VW </option>
+
+</select>
+
+<input type="button" value="select" onclick="myFunction();">
+
+</form>
+<script>
+function myFunction() {
+
+    var pictures = new Array();
+    
+    pictures[0] = "https://pixabay.com/p-848904/?no_redirect";
+    pictures[1] = "http://www.pruebas.pieldetoro.net/web/MERCEDES/DOSSIERES/w115/8-1.jpg";
+    pictures[2] = "https://pixabay.com/p-1203738/?no_redirect";
+    pictures[3] = "https://cdn.pixabay.com/photo/2015/11/13/13/45/vw-beetle-1042002_960_720.jpg";
+
+    var index = document.getElementById('car').selectedIndex;
+    
+    document.images[0].src="https://pixabay.com/p-848904/?no_redirect" + pictures[index] + ".jpg";
+}
+
+    </script>
+</body>
+</html>

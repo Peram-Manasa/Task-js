@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  position: relative;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+input{
+    position: absolute;
+    color:white;
+}
+i{
+  margin-left: 95%;
+}
+#hidecontent{
+  display: none;
+}
+label{
+  margin-top: 30px;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <!-- <a href=""><i style="font-size:24px" class="fa">&#xf1e0;</i></a> -->
+   <label>Select</label>
+  <input type="checkbox"> 
+<div style="text-align:center">
+  <h2>GALLERY</h2>
+</div>
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <input type="checkbox" name="R">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shaqi_jrvej.jpg/1200px-Shaqi_jrvej.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+    
+  </div>
+  <div class="column">
+    <input type="checkbox" name="R">
+    <img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg" alt="img" style="width:100%" onclick="myFunction(this);">
+    
+  </div>
+  <div class="column">
+    <input type="checkbox" name="R">
+    <img src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="img" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <input type="checkbox" name="R">
+   <link href="http://127.0.0.1:5500/TASKS-JS/Task2.html"> <img src="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111-1500x1000.jpg" alt="img" style="width:100%" onclick="myFunction(this);"></link>
+  </div>
+</div>
+
+<div class="container" >
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<div id="hide" onclick="myHide()">
+  <i style="font-size:24px" class="fa">&#xf1e0;</i>
+</div>
+
+<div id="hidecontent" ><a href="https://wa.me/918340947374?text=" alt="">Share on whatsapp</a></div>
+  
+
+
+
+<script>
+ function myHide(){
+  let k=document.getElementById("hidecontent")
+  k.style.display="block"
+ }
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+  window.open(`https://wa.me/91?text=`+encodeURIComponent(imgs.src), '_blank').focus();
+  // console.log(encodeURIComponent(imgs.src));
+}
+
+// let k=document.getElementById("hide")
+//   let l=document.getElementById("hidecontent")
+  // let linkw=document.createElement('p')
+  // linkw.appendChild(l)
+ 
+   
+ 
+</script>
+
+</body>
+</html>

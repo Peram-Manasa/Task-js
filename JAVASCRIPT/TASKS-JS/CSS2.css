@@ -1,0 +1,76 @@
+#clockContainer {
+    /* position: relative;
+    margin: auto;
+    height: 40vw;
+    /*to make the height and width responsive*/
+    /* width: 40vw;
+    background-color: blue; */
+    
+    /* background: urno-repeat; */
+    /*setting our background image*/
+    /* background-size: 100%; */ 
+    background: url(./clock.jpg)no-repeat; 
+   background-color: aqua;
+   border-radius: 50%; 
+   border: 2px solid black; 
+   width: 300px;
+   height: 300px;
+   border-radius: 2px solid;
+   position: relative;
+}
+/* .clockContainer .n1 { --rotation: 30deg;}
+.clockContainer .n2 { --rotation: 60deg;}
+.clockContainer.n3 { --rotation: 90deg;}
+.clockContainer .n4 { --rotation: 120deg;}
+.clockContainer.n5 { --rotation: 150deg;}
+.clockContainer .n6 { --rotation: 180deg;}
+.clockContainer.n7 { --rotation: 210deg;}
+.clockContainer.n8 { --rotation: 240deg;}
+.clockContainer .n9 { --rotation: 270deg;}
+.clockContainer.n10 { --rotation: 300deg;}
+.clockContainer.n11 { --rotation: 330deg;}
+.clockContainer .n12 {--rotation: 360deg;}  */
+.clockContainer .number
+{
+    --rotation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* border-radius: 50%; */
+    /* background-color: bisque; */
+    text-align: center;
+    transform: rotate(var(--rotation));
+}
+
+#hour,
+#minute,
+#second {
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+  
+#hour {
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;
+}
+  
+#minute {
+    width: 1.6%;
+    height: 30%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;
+}
+  
+#second {
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8;
+}

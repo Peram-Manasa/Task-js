@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+	font-family: sans-serif;
+	background: #384047;
+}
+h1 {
+	color: #fff;
+	text-align: center
+}
+
+ul {
+	list-style:none;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	max-width: 780px;
+	text-align: center;
+}
+
+ul li {
+	display: inline-block;
+	padding: 8px;
+	background:white;
+	margin:10px;
+}
+
+ul li img {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+#overlay {
+  background:rgba(0,0,0,0.7);
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  display:none;
+  text-align:center;
+}
+
+#overlay img{
+  margin-top: 10%;
+}
+
+#overlay p{ 
+  color: #fff;
+  font-weight: 700;
+  font-family: 'Comfortaa'
+}
+    </style>
+</head>
+<body>
+    <ul id="imageGallery">
+
+    </ul>
+      <div id="overlay">
+      <img id="fullSize"/>
+      </div>
+      <script>
+        $.getJSON('https://www.instagram.com/katopra_design/?__a=1', 
+   function(data){
+   $.each(data, function(i, f) {
+    $("ul").append('<li><a href="' + f.url + '"><img src="' + f.thumbnailUrl + '" alt="' + f.title + '"></a></li>');
+     $.cache = f.id; 
+   });
+  $overlay = $('#overlay');
+  $image = $("#fullSize");
+  $('#imageGallery img').on('click', function(e){
+    // the image clicked 
+    e.preventDefault();
+    $imageLocation = $(this).parent().attr("href");       // get the parent of this which is the a href
+$image.attr("src", $imageLocation.replace("http://", "https://"));
+    //post URL into new image
+    $overlay.show();
+  })
+  //When overlay is clicked
+$overlay.click(function(){
+  //Hide the overlay
+  $overlay.hide();
+});
+    
+}); 
+  
+  
+
+
+      </script>
+</body>
+</html>

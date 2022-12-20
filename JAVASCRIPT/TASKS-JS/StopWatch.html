@@ -1,0 +1,168 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+            display: flex;
+            justify-content: center;
+            background-color: antiquewhite;
+            color: black;
+            border: 2px solid white;
+            text-align: center;
+            /* height: 100vh; */
+        }
+        .start{
+            background-color: aqua;
+            padding: 15px 0px;
+            width: 40%;
+            height: 40%;
+            border-radius: 20px;
+        }
+        .stop{
+            background-color: grey;
+            color:white;
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 10px;
+            border: 2px solid black;
+            position: relative;
+            transform: translateX(50%);
+
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <H1>STOP WATCH</H1><br><br> -->
+    <!-- <div class="Start"><br>
+    <div id="stop">00 : 00: 00</div>
+    <div>
+     <button>Start</button>
+     <button>Reset</button>
+     <button>Stop</button>
+ </div>
+</body>
+</html> --> -->
+
+
+
+<html>
+  <head>
+    <style>
+      table {
+        width: 50%;
+        text-align: center;
+        position: relative;
+        left: 7cm;
+        top: 4cm;
+      }
+      table,
+      tr,
+      td {
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlGx7V4bwca6QmS90Sgzyox6t4APUOVvaxWQ&usqp=CAU);
+        border: 1px solid white;
+        font-weight: bolder;
+        font-size: 3ex;
+        vertical-align: middle;
+      }
+      button {
+        background-color: aquamarine;
+        font-size: 20px;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-image: url(https://media.istockphoto.com/id/1124231751/vector/spiral-clock-time-eternity-metaphor.jpg?s=612x612&w=0&k=20&c=wUppBZr-5eJaJ7zFhCkfLsH3tfWEqAfbX0qVpAX9MYw=);
+      background-size: cover;
+      color: white;
+    "
+  >
+    <script>
+       let x=0; let y=1; let z=0; let s = 1;  let i = 1; let m = 1;
+       var secInt="";
+       var milliSecInt="";
+       var minInt="";
+      let b= function(){clearInterval(milliSecInt);clearInterval(secInt);clearInterval(minInt); s =1;   i =1;  m =1;
+        watch();}
+      let a= function(){ clearInterval(milliSecInt); clearInterval(secInt);
+        clearInterval(minInt);
+        s=20; i=99; m=99;}
+      function watch() {
+        milliSecInt= setInterval(mil, 10);
+        function mil() {
+          while (s <= 10&&x<=10) {
+            if (x < 9) {
+              x = x + 1;
+              document.getElementById("milli").innerHTML = x;
+            } else if ((x = 9)) {
+              document.getElementById("milli").innerHTML = 9;
+              x = x - 9;
+            }
+            return 0;
+          }
+          console.log(x,y,z);
+        }
+        secInt= setInterval(function () {
+          while (i <= 59&&y<=59) {
+            if (y < 59) {
+              document.getElementById("time").innerHTML = y;
+              y = y + 1;
+            } else {
+              document.getElementById("time").innerHTML = 59;
+              y = y - 59;
+            }
+            return 0;
+          }
+          console.log(x,y,z);
+        }, 1000);
+        minInt=setInterval(function () {
+          while (m <= 59&&x<=59) {
+            if (z < 59) {
+              z = z + 1;
+              document.getElementById("minutes").innerHTML = z;
+            } else {
+              document.getElementById("minutes").innerHTML = 59;
+              z = z - 59;
+            }
+            return 0;
+          }
+          console.log(x,y,z);
+        }, 60000);
+      }
+      function any(){ document.getElementById("demo").innerHTML="harish";}
+    </script>
+    <table>
+      <tr>
+        <td>
+          min
+          <div id="minutes">0</div>
+        </td>
+        <td>
+          sec
+          <div id="time">0</div>
+        </td>
+        <td>
+          mil
+          <div id="milli">0</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="b()"><b>Start</b></button>
+        </td>
+        <td>
+          <button onclick="a()"><b>Stop</b></button>
+        </td>
+        <td><div id="demo"></div></td>
+      </tr>
+    </table>
+  </body>
+</html>

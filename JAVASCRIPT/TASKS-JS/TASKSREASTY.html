@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .topnav {
+         width: 0;
+         position: fixed;
+          z-index: 1;
+         height: 100%;
+         top: 0;
+        left: 0;
+        background-color:paleturquoise;
+         overflow-x: hidden;
+         transition: 0.5s;
+         padding-top: 60px;
+         line-height:50px;
+        }
+        .app-name {
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 24px;
+       color:black;
+       /* margin-bottom: 32px;
+       margin-left:50px; */
+       text-align: center;
+        }
+        ul li a{
+            text-decoration: none;
+        }
+        .sidepanel .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 10px;
+}
+body{
+    background-color: hsl(0, 0%, 100%);
+    /* display:inline-flex; */
+}
+img{
+    display: flex;
+    margin-left:560px;
+    width:170px;
+    height: 170px;
+    margin-top:-60px;
+    margin-left: 150px;
+    border-radius: 50%;
+}
+.openbtn {
+  font-size: 10px;
+  cursor: pointer;
+  background-color:blue;
+  color:black;
+  padding: 10px 10px;
+  border: none;
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="mySidepanel" class="topnav">
+        <p id="app-name">GALLERY</p>
+        <ul type="none">
+        <a href="#" class="closebtn" onclick="closeNav()">X</a>
+        <li><a href="http://127.0.0.1:5500/TASKS-JS/Gallery.html"><i class="fa fa-file"></i> Home</a></li>
+        <li><a href=""><i class='fas fa-bolt'></i>Camera</a></li>
+        <li><a href="#"><i >&#xf302;</i>Selectphoto</a></li>
+        <li><a href="http://127.0.0.1:5500/TASKS-JS/Task2.html"><i class="fa fa-share-alt"></i>share</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn"><i class="fa fa-cog" aria-hidden="true"></i>Setting</a>
+          <div class="dropdown-content">
+            <ul>
+            <li><a href="#">Files</a></li>
+            <li><a href="#">Total Images</a></li>
+            </ul>
+          </div>
+        </li>
+        <!-- <li><a href="#">settings</a></li> -->
+        <li><a href="#"><i class="fa-brands fa-shopify"></i>storage</a></li>
+        <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+      <button class="openbtn" onclick="openNav()">☰ </button>
+      <img src="../Photos/Imagegif.jpg" >
+      <script>
+        function openNav() {
+          document.getElementById("mySidepanel").style.width = "150px";
+        }
+        function closeNav() {
+          document.getElementById("mySidepanel").style.width = "0";
+        }
+        </script>
+
+        <script>
+          function A()
+          {
+            var x=document.createElement("IFRAME");
+            x.setAttribute("src","http://127.0.0.1:5500/TASKS-JS/Gallery.html");
+            document.body.appendChild(x);
+          }
+        </script>
+</body>
+</html>
+
+
+<!-- 
+<div class="dropdown"> 
+  <li><a href="#">VERSIONC</a></li>   
+   <div class="content">
+      <li><a href="#">Documents</a></li><hr>
+      <li><a href="#">Version Numbers</a></li><hr>
+      <li><a href="#">Title</a></li><hr>
+      <li><a href="#">Status</a></li><hr>
+      <li><a href="#">Date</a></li><hr>
+      <li><a href="#">Author</a></li><hr>
+      <li><a href="#">Number Systems</a></li><hr>
+      <li><a href="#">Change/Reason</a></li><hr>
+      <li><a href="#">Title</a></li><hr>  
+  </div> -->

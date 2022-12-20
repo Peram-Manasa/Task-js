@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom event handlers</title>
+    <style>
+        /* body{
+            background-color: aqua;
+        } */
+        button{
+            color:black;
+            font-size: 10px 20px;
+            background-color: aqua;
+        }
+        nav{
+            background-color: blanchedalmond;
+            height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1 id="msg"></h1>
+    <button>Good Morning</button>
+    <button onclick="sgm('Good Afternoon','blue')">Good Afternoon</button>
+    <button onclick="sgm('Good Evening','green')">Good Evening</button>
+    <button onclick="sgm('Good Morning','pink')">Good Morning</button>
+    <button onclick="sgm('Good Afternoon','orange')">Good Afternoon</button>
+</div>
+    <script>
+        let sgm=(message,color)=>{let h1Tag=document.querySelector('msg');
+           h1Tag.innerText=message;
+           h1Tag.style.backgroundColor='blue';
+           h1Tag.style.padding='25px';
+           h1Tag.style.margin='10px';
+           h1Tag.style.boxShadow='0 0 10px ';
+    };
+    </script>
+</body>
+</html>
